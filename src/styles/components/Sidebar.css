@@ -1,0 +1,26 @@
+
+.sidebar {
+  min-height: calc(100vh - 64px);
+  background-color: #ffffff;
+  border-right: 1px solid #f0f0f0;
+}
+
+.sidebar .ant-menu {
+  border-inline-end: none;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 180px !important;
+    min-width: 180px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .sidebar {
+    width: 140px !important;
+    min-width: 140px !important;
+  }
+}

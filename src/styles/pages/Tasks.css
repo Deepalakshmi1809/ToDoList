@@ -1,0 +1,28 @@
+
+.tasks-page {
+  padding: 8px;
+}
+
+.tasks-page__description {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.tasks-page__container {
+  margin-top: 24px;
+  border-radius: 8px;
+}
+
+.tasks-page__form {
+  width: 100%;
+}
+
+.tasks-page__completed {
+  text-decoration: line-through;
+  color: #999999;
+}
+
+.tasks-page__date-text {
+  display: block;
+  margin-top: 4px;
+}

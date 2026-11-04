@@ -1,0 +1,21 @@
+
+.settings-page {
+  padding: 8px;
+}
+
+.settings-page__description {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.settings-page__container {
+  margin-top: 24px;
+  border-radius: 8px;
+}
+
+.settings-page__option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}

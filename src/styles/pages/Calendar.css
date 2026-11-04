@@ -1,0 +1,9 @@
+
+.calendar-page {
+  padding: 8px;
+}
+
+.calendar-page__tasks {
+  margin-top: 24px;
+  border-radius: 8px;
+}

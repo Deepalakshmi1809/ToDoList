@@ -1,0 +1,8 @@
+.custom-button {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.custom-button--full {
+  width: 100%;
+}
