@@ -13,6 +13,7 @@ import Settings from '../pages/Settings';
 
 import MainLayout from '../components/Layout/MainLayout';
 
+// inline comment: https://reactrouter.com/en/main/components/navigate
 function AppRouters() {
   return (
     <HashRouter>
@@ -33,7 +34,7 @@ function AppRouters() {
         </Routes>
       </MainLayout>
     </HashRouter>
-  );
+  )
 }
 
 export default AppRouters;
