@@ -1,18 +1,15 @@
-export const APP_NAME = 'Todo List';
+
+export const APP_NAME = "TodoFlow";
 
 export const TASK_STATUS = {
-  PENDING: 'Pending',
-  COMPLETED: 'Completed',
+  ALL: "All",
+  ACTIVE: "Active",
+  COMPLETED: "Completed",
 };
 
-export const TASK_PRIORITY = {
-  LOW: 'Low',
-  MEDIUM: 'Medium',
-  HIGH: 'High',
-};
-
-export const TASK_FILTERS = {
-  ALL: 'All',
-  PENDING: 'Pending',
-  COMPLETED: 'Completed',
-};
+export const NAVIGATION_ITEMS = [
+  { key: "/", label: "Dashboard" },
+  { key: "/tasks", label: "My Tasks" },
+  { key: "/calendar", label: "Calendar" },
+  { key: "/settings", label: "Settings" },
+];

@@ -1,15 +1,37 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { ConfigProvider } from 'antd';
+/* oxlint-disable react/only-export-components */
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { ConfigProvider, theme } from "antd";
+import App from "./App";
+import { ThemeProvider } from "./context/ThemeContext";
+import { TaskProvider } from "./context/TaskContext";
+import useTheme from "./hooks/useTheme";
 
-import App from './App';
+function ThemedApp() {
+  const { isDarkMode } = useTheme();
 
-import './index.css';
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <ConfigProvider>
-      <App />
+  return (
+    <ConfigProvider
+      theme={{
+        algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        token: {
+          colorPrimary: "#6366f1",
+          borderRadius: 10,
+          fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        },
+      }}
+    >
+      <TaskProvider>
+        <App />
+      </TaskProvider>
     </ConfigProvider>
-  </StrictMode>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <ThemedApp />
+    </ThemeProvider>
+  </React.StrictMode>
 );

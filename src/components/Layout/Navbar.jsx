@@ -1,69 +1,67 @@
-
-import { useState } from 'react';
-
-import {
-  Layout,
-  Typography,
-  Button,
-  Drawer,
-} from 'antd';
-
-import {
-  PlusOutlined,
-  MenuOutlined,
-} from '@ant-design/icons';
-
-import { useNavigate } from 'react-router-dom';
-
-import Sidebar from './Sidebar';
-
-import '../../styles/components/Navbar.css';
+import { Layout, Typography, Space, Avatar, Button, Grid, theme } from "antd";
+import { UserOutlined, MenuOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
-function Navbar() {
-  const navigate = useNavigate();
-
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleAddTask = () => {
-    navigate('/task');
-    setMenuOpen(false);
-  };
+function Navbar({ onMenuClick }) {
+  const screens = Grid.useBreakpoint();
+  const { token } = theme.useToken();
 
   return (
-    <>
-      <Header className="navbar">
-        <Button
-          className="navbar__menu-button"
-          icon={<MenuOutlined />}
-          onClick={() => setMenuOpen(true)}
-        />
+    <Header
+      style={{
+        background: token.colorBgContainer,
+        borderBottom: `1px solid ${token.colorBorderSecondary}`,
+        padding: screens.md ? "0 24px" : "0 16px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        position: "sticky",
+        top: 0,
+        zIndex: 9,
+        lineHeight: "64px",
+        height: 64,
+      }}
+    >
+      <Space size="middle" align="center">
+        {!screens.md && (
+          <Button
+            type="text"
+            icon={<MenuOutlined />}
+            onClick={onMenuClick}
+            aria-label="Open navigation menu"
+            style={{ fontSize: 16 }}
+          />
+        )}
 
-        <Title level={3} className="navbar__title">
-          Todo List
-        </Title>
-
-        <Button
-          type="primary"
-          icon={<PlusOutlined />}
-          onClick={handleAddTask}
+        <Title
+          level={screens.md ? 4 : 5}
+          style={{
+            margin: 0,
+            whiteSpace: "nowrap",
+          }}
         >
-          Add Task
-        </Button>
-      </Header>
+          My Workspace
+        </Title>
+      </Space>
 
-      <Drawer
-        title="Todo List Menu"
-        placement="left"
-        open={menuOpen}
-        onClose={() => setMenuOpen(false)}
-        className="navbar__drawer"
-      >
-        <Sidebar onNavigate={() => setMenuOpen(false)} />
-      </Drawer>
-    </>
+      <Space size={screens.md ? "middle" : "small"} align="center">
+        {screens.md && (
+          <Text type="secondary" style={{ fontSize: 14 }}>
+            Welcome back!
+          </Text>
+        )}
+
+        <Avatar
+          style={{
+            backgroundColor: token.colorPrimary,
+            verticalAlign: "middle",
+          }}
+          icon={<UserOutlined />}
+        />
+      </Space>
+    </Header>
   );
 }
 
