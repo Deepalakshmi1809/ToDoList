@@ -16,6 +16,7 @@ function ThemedApp() {
         algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
         token: {
           colorPrimary: "#6366f1",
+          colorInfo: "#6366f1",
           borderRadius: 10,
           fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         },
