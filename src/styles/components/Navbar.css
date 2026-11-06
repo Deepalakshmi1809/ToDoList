@@ -1,0 +1,32 @@
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.navbar__title {
+  margin: 0 !important;
+}
+
+.navbar__menu-button {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .navbar {
+    padding: 0 12px;
+  }
+
+  .navbar__menu-button {
+    display: inline-flex;
+  }
+
+  .navbar__title {
+    font-size: 18px !important;
+  }
+}
